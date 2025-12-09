@@ -1,2 +1,0 @@
-
-https://ticketsim.streamlit.app/
