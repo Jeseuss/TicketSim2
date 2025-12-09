@@ -92,16 +92,16 @@ class TicketCounterSim:
 
         # ------------------ Record Metrics After Event ------------------
 
-        # 1️⃣ Instantaneous utilization: fraction of servers currently busy
+        #  Instantaneous utilization: fraction of servers currently busy
         instant_busy = sum(1 for s in self.servers if s is not None)
         instant_util = instant_busy / self.num_servers
 
-        # 2️⃣ Cumulative utilization: total busy time / total possible server time
+        #  Cumulative utilization: total busy time / total possible server time
         total_busy_time = sum(self.metrics["server_busy_time"])
         total_possible_time = self.num_servers * max(self.current_time, 1)  # Avoid division by zero
         cumulative_util = total_busy_time / total_possible_time if total_possible_time > 0 else 0
 
-        # 3️⃣ Record values for time-series visualization
+        #  Record values for time-series visualization
         self.time_history.append(self.current_time)
         self.queue_length_history.append(len(self.waiting_line))
         self.utilization_history.append(instant_util)
@@ -142,7 +142,7 @@ class TicketCounterSim:
         wait = self.current_time - self.customers[event.customer_id]["arrival"]
         self.metrics["total_wait_time"] += wait
 
-        # ✅ Use user-defined average service time
+        # Use user-defined average service time
         # Option 1: Fixed service time (deterministic)
         service_duration = self.service_time
         
@@ -235,4 +235,5 @@ class TicketCounterSim:
 # ------------------ Test Runner ------------------
 print("Running basic simulation tests...")
 TicketCounterSim().test_simulation()
+
 print("All tests completed.")
