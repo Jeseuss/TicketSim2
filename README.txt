@@ -1,2 +1,2 @@
-HOW TO ACCESS: https://ticketsim2-y4dtbhdeeifh9ncttcqjzr.streamlit.app/
+HOW TO ACCESS: 
 https://ticketsim.streamlit.app/
