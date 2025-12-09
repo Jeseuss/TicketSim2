@@ -19,7 +19,7 @@ class Event:
 
 # ------------------ Main Simulation Class ------------------
 class TicketCounterSim:
-    def __init__(self, num_servers=2, arrival_rate=1/3, num_customers=30, service_time=5.0):
+    def __init__(self, num_servers=2, arrival_rate=1/1, num_customers=30, service_time=5.0):
         # ------------------ Simulation Parameters ------------------
         self.num_servers = num_servers  # Number of ticket counter agents
         self.arrival_rate = arrival_rate  # Average arrivals per time unit (Poisson rate)
@@ -237,3 +237,4 @@ print("Running basic simulation tests...")
 TicketCounterSim().test_simulation()
 
 print("All tests completed.")
+
